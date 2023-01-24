@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Accordion, Badge, Card } from "react-bootstrap";
+// import { Accordion, Badge, Card } from "react-bootstrap";
 import MainScreen from "../../components/MainScreen";
 import { Link } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
@@ -10,8 +10,28 @@ import { useDispatch, useSelector } from "react-redux";
 import { deleteNoteAction, listNotes } from "../../actions/notesActions";
 import Loading from "../../components/Loading";
 import ErrorMessage from "../../components/ErrorMessage";
+import {
+  Button,
+  ButtonGroup,
+  Card,
+  CardHeader,
+  CardBody,
+  CardTitle,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+  UncontrolledDropdown,
+  Label,
+  FormGroup,
+  Input,
+  Table,
+  Row,
+  Col,
+  UncontrolledTooltip
+} from "reactstrap";
 
 function MyNotes({ history, search }) {
+  
   const dispatch = useDispatch();
 
   const noteList = useSelector((state) => state.noteList);
@@ -66,117 +86,186 @@ function MyNotes({ history, search }) {
         )}
         {loading && <Loading />}
         {loadingDelete && <Loading />}
-        <h3>Week 1</h3>
+            <Col lg="10" md="12">
+            <Card className="custom-card">
+              <CardHeader>
+                <CardTitle tag="h4" className="poppins">Week 1</CardTitle>
+              </CardHeader>
+              <CardBody>
+                <Table className="tablesorter" responsive hover>
+                  <thead className="text-primary">
+                    <tr>
+                      <th>Name</th>
+                      <th>Adm Num</th>
+                      <th>Intro</th>
+                      <th>Projects</th>
+                      <th>Skills</th>
+                      <th>Extra</th>
+                      <th>Intern</th>
+                      <th className="text-center">Profile</th>
+                      <th className="text-center">Edit</th>
+                    </tr>
+                  </thead>
+                  <tbody>
         {notes &&
           notes.map((note) => (
-            <>
-              <div key={note._id}>
-                Name: {note.name}
-                <br />
-                Adm Num: {note.roll}
-                <br />
-                Intro: {note.w1intro}
-                <br />
-                Project: {note.w1project}
-                <br />
-                Skills: {note.w1skills}
-                <br />
-                Extra: {note.w1extra}
-                <br />
-                Intern: {note.w1intern}
-                <br />
-                Profile: {note.w1profile}
-                <br />
-                <Link to={`/week1/${note._id}`}>
-                  <FaRegEdit size={25} />
+                    <tr key={note._id}>
+                      <td>{note.name}</td>
+                      <td>{note.roll}</td>
+                      <td>{note.w1intro}</td>
+                      <td>{note.w1project}</td>
+                      <td>{note.w1skills}</td>
+                      <td>{note.w1extra}</td>
+                      <td>{note.w1intern}</td>
+                      <td className="text-center">{note.w1profile}</td>
+                      <td className="text-center">
+                      <Link to={`/week1/${note._id}`}>
+                  <FaRegEdit size={25} style={{color: 'black'}} />
                 </Link>
-              </div>
-            </>
-          ))}
+                        </td>
+                    </tr>
+                        ))}
+                  </tbody>
+                </Table>
+              </CardBody>
+            </Card>
+          </Col>
           <br /><br />
-          <h3>Week 2</h3>
+          <Col lg="10" md="12">
+            <Card className="custom-card">
+              <CardHeader>
+                <CardTitle tag="h4" className="poppins">Week 2</CardTitle>
+              </CardHeader>
+              <CardBody>
+                <Table className="tablesorter" responsive hover>
+                  <thead className="text-primary">
+                    <tr>
+                      <th>Name</th>
+                      <th>Adm Num</th>
+                      <th>Intro</th>
+                      <th>Projects</th>
+                      <th>Skills</th>
+                      <th>Extra</th>
+                      <th>Intern</th>
+                      <th className="text-center">Profile</th>
+                      <th className="text-center">Edit</th>
+                    </tr>
+                  </thead>
+                  <tbody>
         {notes &&
           notes.map((note) => (
-            <>
-              <div key={note._id}>
-                Name: {note.name}
-                <br />
-                Adm Num: {note.roll}
-                <br />
-                Intro: {note.w2intro}
-                <br />
-                Project: {note.w2project}
-                <br />
-                Skills: {note.w2skills}
-                <br />
-                Extra: {note.w2extra}
-                <br />
-                Intern: {note.w2intern}
-                <br />
-                Profile: {note.w2profile}
-                <br />
-                <Link to={`/week2/${note._id}`}>
-                  <FaRegEdit size={25} />
+                    <tr key={note._id}>
+                      <td>{note.name}</td>
+                      <td>{note.roll}</td>
+                      <td>{note.w2intro}</td>
+                      <td>{note.w2project}</td>
+                      <td>{note.w2skills}</td>
+                      <td>{note.w2extra}</td>
+                      <td>{note.w2intern}</td>
+                      <td className="text-center">{note.w2profile}</td>
+                      <td className="text-center">
+                      <Link to={`/week2/${note._id}`}>
+                  <FaRegEdit size={25} style={{color: 'black'}}/>
                 </Link>
-              </div>
-            </>
-          ))}
+                        </td>
+                    </tr>
+                        ))}
+                  </tbody>
+                </Table>
+              </CardBody>
+            </Card>
+          </Col>
+          <br /><br />     
+          <Col lg="10" md="12">
+            <Card className="custom-card">
+              <CardHeader>
+                <CardTitle tag="h4" className="poppins">Week 3</CardTitle>
+              </CardHeader>
+              <CardBody>
+                <Table className="tablesorter" responsive hover>
+                  <thead className="text-primary">
+                    <tr>
+                      <th>Name</th>
+                      <th>Adm Num</th>
+                      <th>Intro</th>
+                      <th>Projects</th>
+                      <th>Skills</th>
+                      <th>Extra</th>
+                      <th>Intern</th>
+                      <th className="text-center">Profile</th>
+                      <th className="text-center">Edit</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+        {notes &&
+          notes.map((note) => (
+                    <tr key={note._id}>
+                      <td>{note.name}</td>
+                      <td>{note.roll}</td>
+                      <td>{note.w3intro}</td>
+                      <td>{note.w3project}</td>
+                      <td>{note.w3skills}</td>
+                      <td>{note.w3extra}</td>
+                      <td>{note.w3intern}</td>
+                      <td className="text-center">{note.w3profile}</td>
+                      <td className="text-center">
+                      <Link to={`/week3/${note._id}`}>
+                  <FaRegEdit size={25} style={{color: 'black'}} />
+                </Link>
+                        </td>
+                    </tr>
+                        ))}
+                  </tbody>
+                </Table>
+              </CardBody>
+            </Card>
+          </Col>
+          <br /><br />   
+          <Col lg="10" md="12">
+            <Card className="custom-card">
+              <CardHeader>
+                <CardTitle tag="h4" className="poppins">Week 4</CardTitle>
+              </CardHeader>
+              <CardBody>
+                <Table className="tablesorter" responsive hover>
+                  <thead className="text-primary">
+                    <tr>
+                      <th>Name</th>
+                      <th>Adm Num</th>
+                      <th>Intro</th>
+                      <th>Projects</th>
+                      <th>Skills</th>
+                      <th>Extra</th>
+                      <th>Intern</th>
+                      <th className="text-center">Profile</th>
+                      <th className="text-center">Edit</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+        {notes &&
+          notes.map((note) => (
+                    <tr key={note._id}>
+                      <td>{note.name}</td>
+                      <td>{note.roll}</td>
+                      <td>{note.w4intro}</td>
+                      <td>{note.w4project}</td>
+                      <td>{note.w4skills}</td>
+                      <td>{note.w4extra}</td>
+                      <td>{note.w4intern}</td>
+                      <td className="text-center">{note.w4profile}</td>
+                      <td className="text-center">
+                      <Link to={`/week4/${note._id}`}>
+                  <FaRegEdit size={25} style={{color: 'black'}} />
+                </Link>
+                        </td>
+                    </tr>
+                        ))}
+                  </tbody>
+                </Table>
+              </CardBody>
+            </Card>
+          </Col>
           <br /><br />
-          <h3>Week 3</h3>
-        {notes &&
-          notes.map((note) => (
-            <>
-              <div key={note._id}>
-                Name: {note.name}
-                <br />
-                Adm Num: {note.roll}
-                <br />
-                Intro: {note.w3intro}
-                <br />
-                Project: {note.w3project}
-                <br />
-                Skills: {note.w3skills}
-                <br />
-                Extra: {note.w3extra}
-                <br />
-                Intern: {note.w3intern}
-                <br />
-                Profile: {note.w3profile}
-                <br />
-                <Link to={`/week3/${note._id}`}>
-                  <FaRegEdit size={25} />
-                </Link>
-              </div>
-            </>
-          ))}
-          <br /><br />
-          <h3>Week 4</h3>
-        {notes &&
-          notes.map((note) => (
-            <>
-              <div key={note._id}>
-                Name: {note.name}
-                <br />
-                Adm Num: {note.roll}
-                <br />
-                Intro: {note.w4intro}
-                <br />
-                Project: {note.w4project}
-                <br />
-                Skills: {note.w4skills}
-                <br />
-                Extra: {note.w4extra}
-                <br />
-                Intern: {note.w4intern}
-                <br />
-                Profile: {note.w4profile}
-                <br />
-                <Link to={`/week4/${note._id}`}>
-                  <FaRegEdit size={25} />
-                </Link>
-              </div>
-            </>
-          ))}
       </MainScreen>
     </div>
   );

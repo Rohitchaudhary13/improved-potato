@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Accordion, Badge, Card } from "react-bootstrap";
+// import { Accordion, Badge, Card } from "react-bootstrap";
 import MainScreen from "../../components/MainScreen";
 import { Link } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
@@ -10,6 +10,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { deleteNoteAction, listNotes } from "../../actions/notesActions";
 import Loading from "../../components/Loading";
 import ErrorMessage from "../../components/ErrorMessage";
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  CardTitle,
+  Table,
+  Col,
+} from "reactstrap";
 
 function MyNotes({ history, search }) {
   const dispatch = useDispatch();
@@ -75,27 +83,46 @@ function MyNotes({ history, search }) {
         )}
         {loading && <Loading />}
         {loadingDelete && <Loading />}
+        <Col lg="10" md="12">
+            <Card style={{backgroundColor: '#bca8d6'}}>
+              <CardHeader>
+                <CardTitle style={{color: 'black'}} tag="h3" className="poppins">Students List</CardTitle>
+              </CardHeader>
+              <CardBody>
+                <Table className="tablesorter" responsive>
+                  <thead className="text-primary">
+                    <tr>
+                      <th>Name</th>
+                      <th>Admission Number</th>
+                      <th>Branch</th>
+                      <th>Mobile</th>
+                      <th className="text-center">Delete</th>
+                    </tr>
+                  </thead>
+                  <tbody>
         {notes &&
           notes.map((note) => (
-            <>
-              <div key={note._id}>
-                Name: {note.name}
-                <br />
-                Branch: {note.branch}
-                <br />
-                Mobile: {note.mobile}
-                <br />
-                Adm Num: {note.roll}
-                <br />
-                <button
+                    <tr key={note._id}>
+                      <td>{note.name}</td>
+                      <td>{note.roll}</td>
+                      <td>{note.branch}</td>
+                      <td>{note.mobile}</td>
+                      <td className="text-center">
+                      <button
                   className="note-primary"
                   onClick={() => deleteHandler(note._id)}
                 >
                   <MdOutlineDelete size={25} />
                 </button>
-              </div>
-            </>
-          ))}
+                        </td>
+                    </tr>
+                        ))}
+                  </tbody>
+                </Table>
+              </CardBody>
+            </Card>
+          </Col>
+          <br /><br />
       </MainScreen>
     </div>
   );

@@ -28,7 +28,7 @@ function LandingPage({ history }) {
             </div>
         </div>
         <div>
-        <Marquee speed={150}>
+        <Marquee speed={150} gradient={false}>
           <h1 style={{padding: '2rem'}}>React</h1>
           <h1 style={{padding: '2rem'}}>Express</h1>
           <h1 style={{padding: '2rem'}}>NodeJs</h1>

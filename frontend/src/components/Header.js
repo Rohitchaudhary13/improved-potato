@@ -59,6 +59,7 @@ function Header({ setSearch }) {
           <Nav>
             {userInfo ? (
               <>
+                <Nav.Link href="/dashboard">Dashboard</Nav.Link>
                 <Nav.Link href="/mynotes">List</Nav.Link>
                 <Nav.Link href="/studentreport">Report</Nav.Link>
                 <NavDropdown
@@ -83,7 +84,7 @@ function Header({ setSearch }) {
                 </NavDropdown>
               </>
             ) : (              
-              <Link to='/login' style={{fontSize: '1.2rem',marginTop: '0.5rem'}}>Login</Link>
+              <Link to='/login' style={{fontSize: '1.2rem'}}>Login</Link>
             )}
           </Nav>
         </Navbar.Collapse>

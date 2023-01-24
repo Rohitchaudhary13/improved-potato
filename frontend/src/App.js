@@ -1,3 +1,4 @@
+import React from 'react'
 import "./App.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Footer from "./components/Footer";
@@ -15,6 +16,7 @@ import CreateNote from "./screens/SingleNote/CreateNote";
 import { useState } from "react";
 import ProfileScreen from "./screens/ProfileScreen/ProfileScreen";
 import StudentReport from "./screens/StudentReport/StudentReport";
+import Dashboard from "./screens/Dashboard/Dashboard";
 
 function App() {
   const [search, setSearch] = useState("");
@@ -46,6 +48,7 @@ function App() {
         <Route path="/note/:id" component={SingleNote} />
         <Route path="/createnote" component={CreateNote} />;
         <Route path="/profile" component={ProfileScreen} />
+        <Route path="/dashboard" component={Dashboard} />
       </main>
       <Footer />
     </Router>
