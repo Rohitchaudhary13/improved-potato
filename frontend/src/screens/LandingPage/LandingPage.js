@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import "./LandingStyles.css";
-import Marquee from "react-fast-marquee";
 import main from '../../image.jpg'
 
 function LandingPage({ history }) {
@@ -27,16 +26,7 @@ function LandingPage({ history }) {
               </div>
             </div>
         </div>
-        <div>
-        <Marquee speed={150} gradient={false}>
-          <h1 style={{padding: '2rem'}}>React</h1>
-          <h1 style={{padding: '2rem'}}>Express</h1>
-          <h1 style={{padding: '2rem'}}>NodeJs</h1>
-          <h1 style={{padding: '2rem'}}>MongoDB</h1>
-          <h1 style={{padding: '2rem'}}>Material UI</h1>
-          <h1 style={{padding: '2rem'}}>Framer Motion</h1>
-          <h1 style={{padding: '2rem'}}>Bootstrap</h1>
-        </Marquee>
+        <div>        
         </div>
     </div>
   );

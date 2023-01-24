@@ -436,7 +436,7 @@ function Dashboard(props) {
             </Card>
           </Col> */}
           <StudentReport />
-          <Col lg="6" md="12">
+          {/* <Col lg="6" md="12">
             <Card>
               <CardHeader>
                 <CardTitle tag="h4">Simple Table</CardTitle>
@@ -498,7 +498,7 @@ function Dashboard(props) {
                 </Table>
               </CardBody>
             </Card>
-          </Col>
+          </Col> */}
         </Row>
       </div>
       </MainScreen>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import MainScreen from "../../components/MainScreen";
 import axios from "axios";
-import { Button, Card, Form } from "react-bootstrap";
+import { Button, Card, Col, Container, Form } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteNoteAction, updateNoteAction } from "../../actions/notesActions";
 import ErrorMessage from "../../components/ErrorMessage";
@@ -167,8 +167,9 @@ function SingleNote({ match, history }) {
   };
 
   return (
-    <MainScreen title="Edit Note">
-      <Card>
+    <MainScreen title="Week 1 Grades">  
+    <Container >
+      <Card>      
         <Card.Header>Edit Details</Card.Header>
         <Card.Body>
           <Form onSubmit={updateHandler}>
@@ -178,85 +179,80 @@ function SingleNote({ match, history }) {
               <ErrorMessage variant="danger">{errorDelete}</ErrorMessage>
             )}
             <Form.Group controlId="w1intro">
-              <Form.Label>W1intro</Form.Label>
+              <Form.Label>Introduction: </Form.Label>
               <Form.Control
                 type="number"
                 min={0}
                 max={5}
                 value={w1intro}
-                placeholder="Enter the w1intro: "
+                placeholder="Week 1 Introduction"
                 onChange={(e) => setW1intro(e.target.value)}
               />
             </Form.Group>
             <Form.Group controlId="w1project">
-              <Form.Label>W1project</Form.Label>
+              <Form.Label>Project: </Form.Label>
               <Form.Control
                 type="number"
                 min={0}
                 max={5}
                 value={w1project}
-                placeholder="Enter the w1project: "
+                placeholder="Week 1 Project"
                 onChange={(e) => setW1project(e.target.value)}
               />
             </Form.Group>
             <Form.Group controlId="W1intern">
-              <Form.Label>W1intern</Form.Label>
+              <Form.Label>Internships: </Form.Label>
               <Form.Control
                 type="number"
                 min={0}
                 max={5}
                 value={w1intern}
-                placeholder="Enter the w1intern: "
+                placeholder="Week 1 Internships"
                 onChange={(e) => setW1intern(e.target.value)}
               />
             </Form.Group>
             <Form.Group controlId="w1extra">
-              <Form.Label>W1extra</Form.Label>
+              <Form.Label>Extracurricular: </Form.Label>
               <Form.Control
                 type="number"
                 min={0}
                 max={5}
                 value={w1extra}
-                placeholder="Enter the w1extra: "
+                placeholder="Week 1 Extracurricular"
                 onChange={(e) => setW1extra(e.target.value)}
               />
             </Form.Group>
             <Form.Group controlId="w1skills">
-              <Form.Label>W1skills</Form.Label>
+              <Form.Label>Skills: </Form.Label>
               <Form.Control
                 type="number"
                 min={0}
                 max={5}
                 value={w1skills}
-                placeholder="Enter the w1skills: "
+                placeholder="Week 1 Skills"
                 onChange={(e) => setW1skills(e.target.value)}
               />
             </Form.Group>
             <Form.Group controlId="w1profile">
-              <Form.Label>W1profile</Form.Label>
+              <Form.Label>Technical Profiles: </Form.Label>
               <Form.Control
                 type="number"
                 min={0}
                 max={5}
                 value={w1profile}
-                placeholder="Enter the w1profile: "
+                placeholder="Week 1 Technical Profiles"
                 onChange={(e) => setW1profile(e.target.value)}
               />
             </Form.Group>
-            {loading && <Loading size={50} />}
-            <Button variant="primary" type="submit">
-              Update Details
-            </Button>
-            <Button
-              className="mx-2"
-              variant="danger"
-              onClick={() => deleteHandler(match.params.id)}
-            >
-              Delete Student
-            </Button>
+            {loading && <Loading size={50} />}            
+            <button className="primary-btn" type="submit">
+              Update
+            </button>                        
           </Form>
-        </Card.Body>
+        </Card.Body>        
       </Card>
+      </Container>  
+      
     </MainScreen>
   );
 }

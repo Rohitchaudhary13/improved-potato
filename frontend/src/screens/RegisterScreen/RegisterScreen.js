@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Form,  Row, Col } from "react-bootstrap";
+import { Form, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Loading from "../../components/Loading";
@@ -35,9 +35,9 @@ function RegisterScreen({ history }) {
     if (pics.type === "image/jpeg" || pics.type === "image/png") {
       const data = new FormData();
       data.append("file", pics);
-      data.append("upload_preset", "notezipper");
-      data.append("cloud_name", "piyushproj");
-      fetch("https://api.cloudinary.com/v1_1/piyushproj/image/upload", {
+      data.append("upload_preset", "noteLocker");
+      data.append("cloud_name", "dlpia5qvw");
+      fetch("https://api.cloudinary.com/v1_1/dlpia5qvw/image/upload", {
         method: "post",
         body: data,
       })
@@ -73,7 +73,7 @@ function RegisterScreen({ history }) {
         {error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
         {message && <ErrorMessage variant="danger">{message}</ErrorMessage>}
         {loading && <Loading />}
-        <Form onSubmit={submitHandler}>
+        <Form onSubmit={submitHandler} id="reg">
           <Form.Group controlId="name">
             <Form.Label>Name</Form.Label>
             <Form.Control
@@ -81,6 +81,7 @@ function RegisterScreen({ history }) {
               value={name}
               placeholder="Enter name"
               onChange={(e) => setName(e.target.value)}
+              bsClass='custom-class'                            
             />
           </Form.Group>
 

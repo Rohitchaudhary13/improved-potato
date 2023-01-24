@@ -89,7 +89,7 @@ function MyNotes({ history, search }) {
             <Col lg="10" md="12">
             <Card className="custom-card">
               <CardHeader>
-                <CardTitle tag="h4" className="poppins">Week 1</CardTitle>
+                <CardTitle tag="h2" className="poppins" style={{color:'white'}}>Week 1</CardTitle>
               </CardHeader>
               <CardBody>
                 <Table className="tablesorter" responsive hover>
@@ -120,7 +120,7 @@ function MyNotes({ history, search }) {
                       <td className="text-center">{note.w1profile}</td>
                       <td className="text-center">
                       <Link to={`/week1/${note._id}`}>
-                  <FaRegEdit size={25} style={{color: 'black'}} />
+                  <FaRegEdit size={25} />
                 </Link>
                         </td>
                     </tr>
@@ -134,7 +134,7 @@ function MyNotes({ history, search }) {
           <Col lg="10" md="12">
             <Card className="custom-card">
               <CardHeader>
-                <CardTitle tag="h4" className="poppins">Week 2</CardTitle>
+                <CardTitle tag="h2" className="poppins" style={{color:'white'}}>Week 2</CardTitle>
               </CardHeader>
               <CardBody>
                 <Table className="tablesorter" responsive hover>
@@ -165,7 +165,7 @@ function MyNotes({ history, search }) {
                       <td className="text-center">{note.w2profile}</td>
                       <td className="text-center">
                       <Link to={`/week2/${note._id}`}>
-                  <FaRegEdit size={25} style={{color: 'black'}}/>
+                  <FaRegEdit size={25} style={{color: 'white'}}/>
                 </Link>
                         </td>
                     </tr>
@@ -179,7 +179,7 @@ function MyNotes({ history, search }) {
           <Col lg="10" md="12">
             <Card className="custom-card">
               <CardHeader>
-                <CardTitle tag="h4" className="poppins">Week 3</CardTitle>
+                <CardTitle tag="h2" className="poppins" style={{color:'white'}}>Week 3</CardTitle>
               </CardHeader>
               <CardBody>
                 <Table className="tablesorter" responsive hover>
@@ -210,7 +210,7 @@ function MyNotes({ history, search }) {
                       <td className="text-center">{note.w3profile}</td>
                       <td className="text-center">
                       <Link to={`/week3/${note._id}`}>
-                  <FaRegEdit size={25} style={{color: 'black'}} />
+                  <FaRegEdit size={25} />
                 </Link>
                         </td>
                     </tr>
@@ -224,7 +224,7 @@ function MyNotes({ history, search }) {
           <Col lg="10" md="12">
             <Card className="custom-card">
               <CardHeader>
-                <CardTitle tag="h4" className="poppins">Week 4</CardTitle>
+                <CardTitle tag="h2" className="poppins" style={{color:'white'}}>Week 4</CardTitle>
               </CardHeader>
               <CardBody>
                 <Table className="tablesorter" responsive hover>
@@ -255,7 +255,7 @@ function MyNotes({ history, search }) {
                       <td className="text-center">{note.w4profile}</td>
                       <td className="text-center">
                       <Link to={`/week4/${note._id}`}>
-                  <FaRegEdit size={25} style={{color: 'black'}} />
+                  <FaRegEdit size={25} />
                 </Link>
                         </td>
                     </tr>

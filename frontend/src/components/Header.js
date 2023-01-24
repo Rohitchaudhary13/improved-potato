@@ -20,7 +20,7 @@ function Header({ setSearch }) {
 
   const logoutHandler = () => {
     dispatch(logout());
-    history.push("/")
+    history.push("/");
   };
 
   useEffect(() => {}, [userInfo]);
@@ -59,9 +59,9 @@ function Header({ setSearch }) {
           <Nav>
             {userInfo ? (
               <>
-                <Nav.Link href="/dashboard">Dashboard</Nav.Link>
-                <Nav.Link href="/mynotes">List</Nav.Link>
+                <Nav.Link href="/mynotes">My Students</Nav.Link>
                 <Nav.Link href="/studentreport">Report</Nav.Link>
+                <Nav.Link href="/dashboard">Dashboard</Nav.Link>
                 <NavDropdown
                   title={`${userInfo.name}`}
                   id="collasible-nav-dropdown"
@@ -83,8 +83,10 @@ function Header({ setSearch }) {
                   </NavDropdown.Item>
                 </NavDropdown>
               </>
-            ) : (              
-              <Link to='/login' style={{fontSize: '1.2rem'}}>Login</Link>
+            ) : (
+              <Link to="/login" style={{ fontSize: "1.2rem" }}>
+                Login
+              </Link>
             )}
           </Nav>
         </Navbar.Collapse>

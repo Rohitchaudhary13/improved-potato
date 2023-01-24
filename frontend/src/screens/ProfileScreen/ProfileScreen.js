@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Form, Row, Col } from "react-bootstrap";
+import { Form, Row, Col, Container } from "react-bootstrap";
 import MainScreen from "../../components/MainScreen";
 import "./ProfileScreen.css";
 import { useDispatch, useSelector } from "react-redux";
@@ -39,8 +39,8 @@ const ProfileScreen = ({ location, history }) => {
       const data = new FormData();
       data.append("file", pics);
       data.append("upload_preset", "notezipper");
-      data.append("cloud_name", "piyushproj");
-      fetch("https://api.cloudinary.com/v1_1/piyushproj/image/upload", {
+      data.append("cloud_name", "dlpia5qvw");
+      fetch("https://api.cloudinary.com/v1_1/dlpia5qvw/image/upload", {
         method: "post",
         body: data,
       })
@@ -64,23 +64,26 @@ const ProfileScreen = ({ location, history }) => {
   };
 
   return (
-    <MainScreen title="Profile">
-      <Row>
-        <Col>
-          Name: {name}
-          <br />
-          Email: {email}          
-        </Col>
-        <Col
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <img src={pic} alt={name} className="profilePic" />
-        </Col>
-      </Row>
+    <MainScreen>
+      <Container>
+        <Row>
+          <Col
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <img src={pic} alt={name} className="profilePic" />
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <h2>Name: {name} </h2>
+            <h2> Email: {email} </h2>
+          </Col>
+        </Row>
+      </Container>
     </MainScreen>
   );
 };
