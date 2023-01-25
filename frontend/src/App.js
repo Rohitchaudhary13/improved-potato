@@ -17,7 +17,7 @@ import { useState } from "react";
 import ProfileScreen from "./screens/ProfileScreen/ProfileScreen";
 import StudentReport from "./screens/StudentReport/StudentReport";
 import Dashboard from "./screens/Dashboard/Dashboard";
-
+import WeekDash from "./screens/Dashboard/WeekDash";
 function App() {
   const [search, setSearch] = useState("");
 
@@ -49,6 +49,10 @@ function App() {
         <Route path="/createnote" component={CreateNote} />
         <Route path="/profile" component={ProfileScreen} />
         <Route path="/dashboard" component={Dashboard} />
+        <Route path="/week1dash" component={() => <WeekDash wk='1'/>} />
+        <Route path="/week2dash" component={() => <WeekDash wk='2'/>} />
+        <Route path="/week3dash" component={() => <WeekDash wk='3'/>} />
+        <Route path="/week4dash" component={() => <WeekDash wk='4'/>} />
       </main>
       <Footer />
     </Router>

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "chart.js/auto";
 import { Chart } from "react-chartjs-2";
+import { useDispatch, useSelector } from "react-redux";
+import { listNotes } from "../actions/notesActions";
 import {
   Chart as ChartJS,
   LineController,
@@ -13,64 +15,69 @@ import faker from "faker";
 
 ChartJS.register(LineController, LineElement, PointElement, LinearScale, Title);
 
-function Graph(props) {
-  const labels = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-  ];
+function Graph(props, { history, search }) {
+  const dispatch = useDispatch();
+
+  const noteList = useSelector((state) => state.noteList);
+  const { notes } = noteList;
+
+  const labels = [];
   useEffect(() => {
     const fetchSamplings = async () => {
-      setChartData({
-        labels: [
-          "Student 1",
-          "Student 2",
-          "Student 3",
-          "Student 4",
-          "Student 5",
-          "Student 6",
-          "Student 7",
-          "Student 8",
-          "Student 9",
-          "Student 10",
-          "Student 11",
-          "Student 12",
-          "Student 13",
-          "Student 14",
-          "Student 15",
-          "Student 16",
-          "Student 17",
-          "Student 18",
-          "Student 19",
-          "Student 20",
-        ],
-        datasets: [
-          {
-            label: "Students Score",
-            borderWidth: 1.5,
-            backgroundColor: "rgba(255, 255, 255,0.3)",
-            borderColor: "rgba(255,255,255,0.7)",
-            hoverBackgroundColor: "rgba(255, 255, 255,0.1)",
-            barThickness: "15",
-            data: [1, 2, 3, 1, 2, 4, 5, 1, 2, 3, 2, 4, 5, 2, 3, 5, 2, 1, 2, 5],
-          },
-        ],        
-      });
+      if (notes) {
+        setChartData({
+          labels: [...notes.map((val) => val.name)],
+          datasets: [
+            {
+              label: "Students Score",
+              borderWidth: 1.5,
+              backgroundColor: "rgba(255, 255, 255,0.3)",
+              borderColor: "rgba(255,255,255,0.7)",
+              hoverBackgroundColor: "rgba(255, 255, 255,0.1)",
+              barThickness: "15",
+              data: [
+                ...notes.map(
+                  (val) =>
+                    parseInt(val.w1intro) +
+                    parseInt(val.w1project) +
+                    parseInt(val.w1skills) +
+                    parseInt(val.w1extra) +
+                    parseInt(val.w1intern) +
+                    parseInt(val.w1profile) +
+                    parseInt(val.w2intro) +
+                    parseInt(val.w2project) +
+                    parseInt(val.w2skills) +
+                    parseInt(val.w2extra) +
+                    parseInt(val.w2intern) +
+                    parseInt(val.w2profile) +
+                    parseInt(val.w3intro) +
+                    parseInt(val.w3project) +
+                    parseInt(val.w3skills) +
+                    parseInt(val.w3extra) +
+                    parseInt(val.w3intern) +
+                    parseInt(val.w3profile) +
+                    parseInt(val.w4intro) +
+                    parseInt(val.w4project) +
+                    parseInt(val.w4skills) +
+                    parseInt(val.w4extra) +
+                    parseInt(val.w4intern) +
+                    parseInt(val.w4profile)
+                ),
+              ],
+            },
+          ],
+        });
+      }
     };
     fetchSamplings();
-  }, []);
+  }, [notes]);
 
   const [chartData, setChartData] = useState({
-    datasets: [],
+    datasets: [],    
   });
-
   return (
     <>
-      <Chart type={props.type} data={chartData} />
+      <Chart type={props.type} data={chartData}/>
     </>
   );
 }
