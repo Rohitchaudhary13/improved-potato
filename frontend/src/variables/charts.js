@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "chart.js/auto";
 import { Chart } from "react-chartjs-2";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteNoteAction, listNotes } from "../actions/notesActions";
 import {
   Chart as ChartJS,
   LineController,
@@ -13,16 +15,45 @@ import faker from "faker";
 
 ChartJS.register(LineController, LineElement, PointElement, LinearScale, Title);
 
-function Graph(props) {
-  const labels = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-  ];
+function Graph(props, {history, search}) {
+  const dispatch = useDispatch();
+
+  const noteList = useSelector((state) => state.noteList);
+  const { loading, error, notes } = noteList;
+
+  // const filteredNotes = notes.filter((note) =>
+  //   note.title.toLowerCase().includes(search.toLowerCase())
+  // );
+
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
+
+  const noteDelete = useSelector((state) => state.noteDelete);
+  const {
+    loading: loadingDelete,
+    error: errorDelete,
+    success: successDelete,
+  } = noteDelete;
+
+  const noteCreate = useSelector((state) => state.noteCreate);
+  const { success: successCreate } = noteCreate;
+
+  const noteUpdate = useSelector((state) => state.noteUpdate);
+  const { success: successUpdate } = noteUpdate;
+
+  useEffect(() => {
+    dispatch(listNotes());
+    if (!userInfo) {
+      history.push("/");
+    }
+  }, [
+    dispatch,
+    history,
+    userInfo,
+    successDelete,
+    successCreate,
+    successUpdate,
+  ]);
   useEffect(() => {
     const fetchSamplings = async () => {
       setChartData({
