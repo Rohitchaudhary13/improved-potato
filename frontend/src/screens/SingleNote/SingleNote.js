@@ -26,7 +26,7 @@ function SingleNote({ match, history }) {
     if (window.confirm("Are you sure?")) {
       dispatch(deleteNoteAction(id));
     }
-    history.push("/mynotes");
+    history.push("/mystudents");
   };
 
   useEffect(() => {
@@ -55,7 +55,7 @@ function SingleNote({ match, history }) {
     if (!name || !mobile || !branch || !roll) return;
 
     resetHandler();
-    history.push("/mynotes");
+    history.push("/mystudents");
   };
 
   return (

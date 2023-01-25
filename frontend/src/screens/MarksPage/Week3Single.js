@@ -120,32 +120,30 @@ function SingleNote({ match, history }) {
         mobile,
         branch,
         roll,
+        w1intro || undefined,
+        w1project || undefined,
+        w1intern || undefined,
+        w1skills || undefined,
+        w1profile || undefined,
+        w1extra || undefined,
+        w2intro || undefined,
+        w2project || undefined,
+        w2intern || undefined,
+        w2skills || undefined,
+        w2profile || undefined,
+        w2extra || undefined,
         w3intro,
         w3project,
         w3intern,
         w3skills,
         w3profile,
         w3extra,
-        (w2intro || undefined),
-        (w2project || undefined),
-        (w2intern || undefined),
-        (w2skills || undefined),
-        (w2profile || undefined),
-        (w2extra || undefined),
-
-        (w1intro || undefined),
-        (w1project || undefined),
-        (w1intern || undefined),
-        (w1skills || undefined),
-        (w1profile || undefined),
-        (w1extra || undefined),
-
-        (w4intro || undefined),
-        (w4project || undefined),
-        (w4intern || undefined),
-        (w4skills || undefined),
-        (w4profile || undefined),
-        (w4extra || undefined)
+        w4intro || undefined,
+        w4project || undefined,
+        w4intern || undefined,
+        w4skills || undefined,
+        w4profile || undefined,
+        w4extra || undefined
       )
     );
     if (
@@ -168,90 +166,96 @@ function SingleNote({ match, history }) {
 
   return (
     <MainScreen title="Week 3 Grades">
-    <Container >
-      <Card>      
-        <Card.Header>Edit Details</Card.Header>
-        <Card.Body>
-          <Form onSubmit={updateHandler}>
-            {loadingDelete && <Loading />}
-            {error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
-            {errorDelete && (
-              <ErrorMessage variant="danger">{errorDelete}</ErrorMessage>
-            )}
-            <Form.Group controlId="w3intro">
-              <Form.Label>Introduction: </Form.Label>
-              <Form.Control
-                type="number"
-                min={0}
-                max={5}
-                value={w3intro}
-                placeholder="Week 3 Introduction"
-                onChange={(e) => setW3intro(e.target.value)}
-              />
-            </Form.Group>
-            <Form.Group controlId="w3project">
-              <Form.Label>Project: </Form.Label>
-              <Form.Control
-                type="number"
-                min={0}
-                max={5}
-                value={w3project}
-                placeholder="Week 3 Project"
-                onChange={(e) => setW3project(e.target.value)}
-              />
-            </Form.Group>
-            <Form.Group controlId="W3intern">
-              <Form.Label>Internships: </Form.Label>
-              <Form.Control
-                type="number"
-                min={0}
-                max={5}
-                value={w3intern}
-                placeholder="Week 3 Internships"
-                onChange={(e) => setW3intern(e.target.value)}
-              />
-            </Form.Group>
-            <Form.Group controlId="w3extra">
-              <Form.Label>Extracurricular: </Form.Label>
-              <Form.Control
-                type="number"
-                min={0}
-                max={5}
-                value={w3extra}
-                placeholder="Week 3 Extracurricular"
-                onChange={(e) => setW3extra(e.target.value)}
-              />
-            </Form.Group>
-            <Form.Group controlId="w3skills">
-              <Form.Label>Skills: </Form.Label>
-              <Form.Control
-                type="number"
-                min={0}
-                max={5}
-                value={w3skills}
-                placeholder="Week 3 Skills"
-                onChange={(e) => setW3skills(e.target.value)}
-              />
-            </Form.Group>
-            <Form.Group controlId="w3profile">
-              <Form.Label>Technical Profiles: </Form.Label>
-              <Form.Control
-                type="number"
-                min={0}
-                max={5}
-                value={w3profile}
-                placeholder="Week 3 Technical Profiles"
-                onChange={(e) => setW3profile(e.target.value)}
-              />
-            </Form.Group>
-            {loading && <Loading size={50} />}            
-            <button className="primary-btn" type="submit">
-              Update
-            </button>                        
-          </Form>
-        </Card.Body>        
-      </Card>
-      </Container>  
+      <Container>
+        <Card>
+          <Card.Header>Edit Details</Card.Header>
+          <Card.Body>
+            <Form onSubmit={updateHandler}>
+              {loadingDelete && <Loading />}
+              {error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
+              {errorDelete && (
+                <ErrorMessage variant="danger">{errorDelete}</ErrorMessage>
+              )}
+              <Form.Group controlId="w3intro">
+                <Form.Label>Introduction: </Form.Label>
+                <Form.Control
+                  type="number"
+                  min={0}
+                  max={5}
+                  value={w3intro}
+                  placeholder="Week 3 Introduction"
+                  onChange={(e) => setW3intro(e.target.value)}
+                  required={true}
+                />
+              </Form.Group>
+              <Form.Group controlId="w3project">
+                <Form.Label>Project: </Form.Label>
+                <Form.Control
+                  type="number"
+                  min={0}
+                  max={5}
+                  value={w3project}
+                  placeholder="Week 3 Project"
+                  onChange={(e) => setW3project(e.target.value)}
+                  required={true}
+                />
+              </Form.Group>
+              <Form.Group controlId="W3intern">
+                <Form.Label>Internships: </Form.Label>
+                <Form.Control
+                  type="number"
+                  min={0}
+                  max={5}
+                  value={w3intern}
+                  placeholder="Week 3 Internships"
+                  onChange={(e) => setW3intern(e.target.value)}
+                  required={true}
+                />
+              </Form.Group>
+              <Form.Group controlId="w3extra">
+                <Form.Label>Extracurricular: </Form.Label>
+                <Form.Control
+                  type="number"
+                  min={0}
+                  max={5}
+                  value={w3extra}
+                  placeholder="Week 3 Extracurricular"
+                  onChange={(e) => setW3extra(e.target.value)}
+                  required={true}
+                />
+              </Form.Group>
+              <Form.Group controlId="w3skills">
+                <Form.Label>Skills: </Form.Label>
+                <Form.Control
+                  type="number"
+                  min={0}
+                  max={5}
+                  value={w3skills}
+                  placeholder="Week 3 Skills"
+                  onChange={(e) => setW3skills(e.target.value)}
+                  required={true}
+                />
+              </Form.Group>
+              <Form.Group controlId="w3profile">
+                <Form.Label>Technical Profiles: </Form.Label>
+                <Form.Control
+                  type="number"
+                  min={0}
+                  max={5}
+                  value={w3profile}
+                  placeholder="Week 3 Technical Profiles"
+                  onChange={(e) => setW3profile(e.target.value)}
+                  required={true}
+                />
+              </Form.Group>
+              {loading && <Loading size={50} />}
+              <button className="primary-btn" type="submit">
+                Update
+              </button>
+            </Form>
+          </Card.Body>
+        </Card>
+      </Container>
     </MainScreen>
   );
 }
