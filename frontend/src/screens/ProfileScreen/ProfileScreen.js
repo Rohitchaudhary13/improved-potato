@@ -64,26 +64,57 @@ const ProfileScreen = ({ location, history }) => {
   };
 
   return (
-    <MainScreen>
-      <Container>
-        <Row>
-          <Col
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <img src={pic} alt={name} className="profilePic" />
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <h2>Name: {name} </h2>
-            <h2> Email: {email} </h2>
-          </Col>
-        </Row>
-      </Container>
+    // <MainScreen>
+    //   <Container>
+    //     <Row>
+    //       <Col
+    //         style={{
+    //           display: "flex",
+    //           alignItems: "center",
+    //           justifyContent: "center",
+    //         }}
+    //       >
+    //         <img src={pic} alt={name} className="profilePic" />
+    //       </Col>
+    //     </Row>
+    //     <Row>
+    //       <Col>
+    //         <h2>Name: {name} </h2>
+    //         <h2> Email: {email} </h2>
+    //       </Col>
+    //     </Row>
+    //   </Container>
+    // </MainScreen>
+    <MainScreen title="Profile">
+      <div className="profileWrapper">
+        <Container>
+          <Row>
+            <Col xl={6} sm={12} lg={6}>
+              <h3>
+                We are thrilled to welcome you{" "}
+                <span style={{ fontWeight: "600", color: "white" }}>
+                  {name}
+                </span>{" "}
+                to our mentorship program at Salaah. We know that under your
+                guidance and support, our mentees will be able to achieve their
+                goals and grow both personally and professionally. We are sure
+                that this will be an invaluable experience for all of us.
+                <br />
+                Welcome to Salaah, {name}!
+              </h3>
+              <h4>
+                Contact Info:{" "}
+                <span style={{ fontWeight: "600", color: "white" }}>
+                  {email}
+                </span>
+              </h4>
+            </Col>
+            <Col xl={6} sm={12} lg={6}>
+              <img src={pic} alt={name} className="profilePic" />
+            </Col>
+          </Row>
+        </Container>
+      </div>
     </MainScreen>
   );
 };

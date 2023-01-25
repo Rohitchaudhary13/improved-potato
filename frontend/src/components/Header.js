@@ -30,7 +30,7 @@ function Header({ setSearch }) {
       collapseOnSelect
       expand="lg"
       bg="transparent"
-      variant="light"
+      variant="dark"
       style={{ border: "none" }}
     >
       <Container>
@@ -42,20 +42,9 @@ function Header({ setSearch }) {
           Salaah.
         </Navbar.Brand>
 
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" className="" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="m-auto">
-            {/* {userInfo && (
-              <Form inline>
-                <FormControl
-                  type="text"
-                  placeholder="Search"
-                  className="mr-sm-2"
-                  onChange={(e) => setSearch(e.target.value)}
-                />
-              </Form>
-            )} */}
-          </Nav>
+          <Nav className="m-auto"></Nav>
           <Nav>
             {userInfo ? (
               <>
@@ -64,7 +53,7 @@ function Header({ setSearch }) {
                 <Nav.Link href="/dashboard">Dashboard</Nav.Link>
                 <NavDropdown
                   title={`${userInfo.name}`}
-                  id="collasible-nav-dropdown"
+                  id="collasible-nav-dropdown"                                 
                 >
                   <NavDropdown.Item href="/profile">
                     <img
