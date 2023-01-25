@@ -49,6 +49,37 @@ function Overall(props, { history, search }, week) {
             },
           ],
         });
+        setOptions({
+          options: {
+            responsive: true,
+            scales: {
+              y: {
+                ticks: {
+                  color: "gray",
+                  beginAtZero: true,
+                  stepSize: 3,
+                  precision: 0,
+                  font: {
+                    weight: 'bold',
+                    size: 18,
+                  }      
+                },
+              },
+              x: {
+                ticks: {
+                  color: "gray",
+                  beginAtZero: true,
+                  stepSize: 3,
+                  precision: 0,
+                  font: {
+                    weight: 'bold',
+                    size: 16,
+                  }      
+                },
+              },
+            },
+          },
+        });
       }
     };
     fetchSamplings();
@@ -57,10 +88,12 @@ function Overall(props, { history, search }, week) {
   const [chartData, setChartData] = useState({
     datasets: [],
   });
-
+  const [options, setOptions] = useState({
+    datasets: [],
+  });
   return (
     <>
-      <Chart type={props.type} data={chartData} />
+      <Chart type={props.type} data={chartData} options={options.options} />
     </>
   );
 }

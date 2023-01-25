@@ -67,17 +67,51 @@ function Graph(props, { history, search }) {
             },
           ],
         });
+        setOptions({
+          options: {
+            responsive: true,
+            scales: {
+              y: {
+                ticks: {
+                  color: "gray",
+                  beginAtZero: true,
+                  stepSize: 5,
+                  precision: 0,
+                  font: {
+                    weight: 'bold',
+                    size: 18,
+                  }                
+                },
+              },
+              x: {
+                ticks: {
+                  color: "gray",
+                  beginAtZero: true,
+                  stepSize: 5,
+                  precision: 0,
+                  font: {
+                    weight: 'bold',
+                    size: 15,
+                  }
+                },
+              },
+            },
+          },
+        });
       }
     };
     fetchSamplings();
   }, [notes]);
 
   const [chartData, setChartData] = useState({
-    datasets: [],    
+    datasets: [],
+  });
+  const [options, setOptions] = useState({
+    datasets: [],
   });
   return (
     <>
-      <Chart type={props.type} data={chartData}/>
+      <Chart type={props.type} data={chartData} options={options.options} />
     </>
   );
 }
