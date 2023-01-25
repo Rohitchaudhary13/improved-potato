@@ -18,7 +18,7 @@ function LandingPage({ history }) {
     <div className="main">
       {/* <hr style={{border: "1px solid #fff", width: '95%', margin: 'auto'}} /> */}
       <div className="landing-cover">
-        <h2 className="unbounded lander-0">Student</h2>
+        <h2 className="unbounded lander-0">Talent</h2>
         <h1 className="unbounded lander">
           Evaluation
         </h1>

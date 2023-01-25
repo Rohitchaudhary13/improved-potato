@@ -20,34 +20,22 @@
   font-size: 1rem;
   align-items: center;
 }
-.lander{
-  font-size: 8.4rem;
-  width: 20%;
-  margin: auto;
-  word-wrap: break-word;
-  text-align: center;
-}
 
+.lander{
+  font-size: 8rem;
+}
+.lander-0 .lander-2{
+  font-size: 3rem;
+}
 .landing-cover{
-  width: 100%;
-  height: 100vh;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  margin-top: 8rem;
+  margin-bottom: 10rem;
 }
-.lander-0{
-  width: 40%;
-  text-align: center;
-}
-.lander-2{
-  width: 40%;
-  text-align: center;
-}
-.lander{
-  backdrop-filter: blur(2px);
 
-}
 
 .primary-btn{
   padding: 1rem;
