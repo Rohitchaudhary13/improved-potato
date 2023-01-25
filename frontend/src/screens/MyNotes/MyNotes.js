@@ -17,6 +17,7 @@ function MyNotes({ history, search }) {
 
   const noteList = useSelector((state) => state.noteList);
   const { loading, error, notes } = noteList;
+  
 
   // const filteredNotes = notes.filter((note) =>
   //   note.title.toLowerCase().includes(search.toLowerCase())
