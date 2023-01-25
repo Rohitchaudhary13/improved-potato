@@ -187,6 +187,7 @@ function SingleNote({ match, history }) {
                 value={w1intro}
                 placeholder="Week 1 Introduction"
                 onChange={(e) => setW1intro(e.target.value)}
+                required={true}
               />
             </Form.Group>
             <Form.Group controlId="w1project">
@@ -198,6 +199,7 @@ function SingleNote({ match, history }) {
                 value={w1project}
                 placeholder="Week 1 Project"
                 onChange={(e) => setW1project(e.target.value)}
+                required={true}
               />
             </Form.Group>
             <Form.Group controlId="W1intern">
@@ -209,6 +211,7 @@ function SingleNote({ match, history }) {
                 value={w1intern}
                 placeholder="Week 1 Internships"
                 onChange={(e) => setW1intern(e.target.value)}
+                required={true}
               />
             </Form.Group>
             <Form.Group controlId="w1extra">
@@ -220,6 +223,7 @@ function SingleNote({ match, history }) {
                 value={w1extra}
                 placeholder="Week 1 Extracurricular"
                 onChange={(e) => setW1extra(e.target.value)}
+                required={true}
               />
             </Form.Group>
             <Form.Group controlId="w1skills">
@@ -231,6 +235,7 @@ function SingleNote({ match, history }) {
                 value={w1skills}
                 placeholder="Week 1 Skills"
                 onChange={(e) => setW1skills(e.target.value)}
+                required={true}
               />
             </Form.Group>
             <Form.Group controlId="w1profile">
@@ -242,6 +247,7 @@ function SingleNote({ match, history }) {
                 value={w1profile}
                 placeholder="Week 1 Technical Profiles"
                 onChange={(e) => setW1profile(e.target.value)}
+                required={true}
               />
             </Form.Group>
             {loading && <Loading size={50} />}            

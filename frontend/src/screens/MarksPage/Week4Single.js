@@ -183,7 +183,8 @@ function SingleNote({ match, history }) {
                   max={5}
                   value={w4intro}
                   placeholder="Week 4 Introduction"
-                  onChange={(e) => setW4intro(e.target.value)}
+                  onChange={(e) => setW4intro(e.target.value)}                  
+                  required={true}
                 />
               </Form.Group>
               <Form.Group controlId="w4project">
@@ -195,6 +196,7 @@ function SingleNote({ match, history }) {
                   value={w4project}
                   placeholder="Week 4 Project"
                   onChange={(e) => setW4project(e.target.value)}
+                  required={true}
                 />
               </Form.Group>
               <Form.Group controlId="W4intern">
@@ -206,6 +208,7 @@ function SingleNote({ match, history }) {
                   value={w4intern}
                   placeholder="Week 4 Internships"
                   onChange={(e) => setW4intern(e.target.value)}
+                  required={true}
                 />
               </Form.Group>
               <Form.Group controlId="w4extra">
@@ -217,6 +220,7 @@ function SingleNote({ match, history }) {
                   value={w4extra}
                   placeholder="Week 4 Extracurricular"
                   onChange={(e) => setW4extra(e.target.value)}
+                  required={true}
                 />
               </Form.Group>
               <Form.Group controlId="w4skills">
@@ -228,6 +232,7 @@ function SingleNote({ match, history }) {
                   value={w4skills}
                   placeholder="Week 4 Skills"
                   onChange={(e) => setW4skills(e.target.value)}
+                  required={true}
                 />
               </Form.Group>
               <Form.Group controlId="w4profile">
@@ -239,6 +244,7 @@ function SingleNote({ match, history }) {
                   value={w4profile}
                   placeholder="Week 4 Technical Profiles"
                   onChange={(e) => setW4profile(e.target.value)}
+                  required={true}
                 />
               </Form.Group>
               {loading && <Loading size={50} />}

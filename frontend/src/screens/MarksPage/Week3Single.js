@@ -185,6 +185,7 @@ function SingleNote({ match, history }) {
                   value={w3intro}
                   placeholder="Week 3 Introduction"
                   onChange={(e) => setW3intro(e.target.value)}
+                  required={true}
                 />
               </Form.Group>
               <Form.Group controlId="w3project">
@@ -196,6 +197,7 @@ function SingleNote({ match, history }) {
                   value={w3project}
                   placeholder="Week 3 Project"
                   onChange={(e) => setW3project(e.target.value)}
+                  required={true}
                 />
               </Form.Group>
               <Form.Group controlId="W3intern">
@@ -207,6 +209,7 @@ function SingleNote({ match, history }) {
                   value={w3intern}
                   placeholder="Week 3 Internships"
                   onChange={(e) => setW3intern(e.target.value)}
+                  required={true}
                 />
               </Form.Group>
               <Form.Group controlId="w3extra">
@@ -218,6 +221,7 @@ function SingleNote({ match, history }) {
                   value={w3extra}
                   placeholder="Week 3 Extracurricular"
                   onChange={(e) => setW3extra(e.target.value)}
+                  required={true}
                 />
               </Form.Group>
               <Form.Group controlId="w3skills">
@@ -229,6 +233,7 @@ function SingleNote({ match, history }) {
                   value={w3skills}
                   placeholder="Week 3 Skills"
                   onChange={(e) => setW3skills(e.target.value)}
+                  required={true}
                 />
               </Form.Group>
               <Form.Group controlId="w3profile">
@@ -240,6 +245,7 @@ function SingleNote({ match, history }) {
                   value={w3profile}
                   placeholder="Week 3 Technical Profiles"
                   onChange={(e) => setW3profile(e.target.value)}
+                  required={true}
                 />
               </Form.Group>
               {loading && <Loading size={50} />}
