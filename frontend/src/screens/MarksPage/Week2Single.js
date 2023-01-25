@@ -3,7 +3,10 @@ import MainScreen from "../../components/MainScreen";
 import axios from "axios";
 import { Button, Card, Container, Form } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteNoteAction, updateNoteAction2 } from "../../actions/notesActions";
+import {
+  deleteNoteAction,
+  updateNoteAction2,
+} from "../../actions/notesActions";
 import ErrorMessage from "../../components/ErrorMessage";
 import Loading from "../../components/Loading";
 import ReactMarkdown from "react-markdown";
@@ -120,32 +123,30 @@ function SingleNote({ match, history }) {
         mobile,
         branch,
         roll,
+        w1intro || undefined,
+        w1project || undefined,
+        w1intern || undefined,
+        w1skills || undefined,
+        w1profile || undefined,
+        w1extra || undefined,
         w2intro,
         w2project,
         w2intern,
         w2skills,
         w2profile,
         w2extra,
-        (w1intro || undefined),
-        (w1project || undefined),
-        (w1intern || undefined),
-        (w1skills || undefined),
-        (w1profile || undefined),
-        (w1extra || undefined),
-
-        (w3intro || undefined),
-        (w3project || undefined),
-        (w3intern || undefined),
-        (w3skills || undefined),
-        (w3profile || undefined),
-        (w3extra || undefined),
-
-        (w4intro || undefined),
-        (w4project || undefined),
-        (w4intern || undefined),
-        (w4skills || undefined),
-        (w4profile || undefined),
-        (w4extra || undefined)
+        w3intro || undefined,
+        w3project || undefined,
+        w3intern || undefined,
+        w3skills || undefined,
+        w3profile || undefined,
+        w3extra || undefined,
+        w4intro || undefined,
+        w4project || undefined,
+        w4intern || undefined,
+        w4skills || undefined,
+        w4profile || undefined,
+        w4extra || undefined
       )
     );
     if (
@@ -168,90 +169,90 @@ function SingleNote({ match, history }) {
 
   return (
     <MainScreen title="Week 2 Grades">
-    <Container >
-      <Card>      
-        <Card.Header>Edit Details</Card.Header>
-        <Card.Body>
-          <Form onSubmit={updateHandler}>
-            {loadingDelete && <Loading />}
-            {error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
-            {errorDelete && (
-              <ErrorMessage variant="danger">{errorDelete}</ErrorMessage>
-            )}
-            <Form.Group controlId="w2intro">
-              <Form.Label>Introduction: </Form.Label>
-              <Form.Control
-                type="number"
-                min={0}
-                max={5}
-                value={w2intro}
-                placeholder="Week 2 Introduction"
-                onChange={(e) => setW2intro(e.target.value)}
-              />
-            </Form.Group>
-            <Form.Group controlId="w2project">
-              <Form.Label>Project: </Form.Label>
-              <Form.Control
-                type="number"
-                min={0}
-                max={5}
-                value={w2project}
-                placeholder="Week 2 Project"
-                onChange={(e) => setW2project(e.target.value)}
-              />
-            </Form.Group>
-            <Form.Group controlId="W2intern">
-              <Form.Label>Internships: </Form.Label>
-              <Form.Control
-                type="number"
-                min={0}
-                max={5}
-                value={w2intern}
-                placeholder="Week 2 Internships"
-                onChange={(e) => setW2intern(e.target.value)}
-              />
-            </Form.Group>
-            <Form.Group controlId="w2extra">
-              <Form.Label>Extracurricular: </Form.Label>
-              <Form.Control
-                type="number"
-                min={0}
-                max={5}
-                value={w2extra}
-                placeholder="Week 2 Extracurricular"
-                onChange={(e) => setW2extra(e.target.value)}
-              />
-            </Form.Group>
-            <Form.Group controlId="w2skills">
-              <Form.Label>Skills: </Form.Label>
-              <Form.Control
-                type="number"
-                min={0}
-                max={5}
-                value={w2skills}
-                placeholder="Week 2 Skills"
-                onChange={(e) => setW2skills(e.target.value)}
-              />
-            </Form.Group>
-            <Form.Group controlId="w2profile">
-              <Form.Label>Technical Profiles: </Form.Label>
-              <Form.Control
-                type="number"
-                min={0}
-                max={5}
-                value={w2profile}
-                placeholder="Week 2 Technical Profiles"
-                onChange={(e) => setW2profile(e.target.value)}
-              />
-            </Form.Group>
-            {loading && <Loading size={50} />}            
-            <button className="primary-btn" type="submit">
-              Update
-            </button>                        
-          </Form>
-        </Card.Body>        
-      </Card>
-      </Container>  
+      <Container>
+        <Card>
+          <Card.Header>Edit Details</Card.Header>
+          <Card.Body>
+            <Form onSubmit={updateHandler}>
+              {loadingDelete && <Loading />}
+              {error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
+              {errorDelete && (
+                <ErrorMessage variant="danger">{errorDelete}</ErrorMessage>
+              )}
+              <Form.Group controlId="w2intro">
+                <Form.Label>Introduction: </Form.Label>
+                <Form.Control
+                  type="number"
+                  min={0}
+                  max={5}
+                  value={w2intro}
+                  placeholder="Week 2 Introduction"
+                  onChange={(e) => setW2intro(e.target.value)}
+                />
+              </Form.Group>
+              <Form.Group controlId="w2project">
+                <Form.Label>Project: </Form.Label>
+                <Form.Control
+                  type="number"
+                  min={0}
+                  max={5}
+                  value={w2project}
+                  placeholder="Week 2 Project"
+                  onChange={(e) => setW2project(e.target.value)}
+                />
+              </Form.Group>
+              <Form.Group controlId="W2intern">
+                <Form.Label>Internships: </Form.Label>
+                <Form.Control
+                  type="number"
+                  min={0}
+                  max={5}
+                  value={w2intern}
+                  placeholder="Week 2 Internships"
+                  onChange={(e) => setW2intern(e.target.value)}
+                />
+              </Form.Group>
+              <Form.Group controlId="w2extra">
+                <Form.Label>Extracurricular: </Form.Label>
+                <Form.Control
+                  type="number"
+                  min={0}
+                  max={5}
+                  value={w2extra}
+                  placeholder="Week 2 Extracurricular"
+                  onChange={(e) => setW2extra(e.target.value)}
+                />
+              </Form.Group>
+              <Form.Group controlId="w2skills">
+                <Form.Label>Skills: </Form.Label>
+                <Form.Control
+                  type="number"
+                  min={0}
+                  max={5}
+                  value={w2skills}
+                  placeholder="Week 2 Skills"
+                  onChange={(e) => setW2skills(e.target.value)}
+                />
+              </Form.Group>
+              <Form.Group controlId="w2profile">
+                <Form.Label>Technical Profiles: </Form.Label>
+                <Form.Control
+                  type="number"
+                  min={0}
+                  max={5}
+                  value={w2profile}
+                  placeholder="Week 2 Technical Profiles"
+                  onChange={(e) => setW2profile(e.target.value)}
+                />
+              </Form.Group>
+              {loading && <Loading size={50} />}
+              <button className="primary-btn" type="submit">
+                Update
+              </button>
+            </Form>
+          </Card.Body>
+        </Card>
+      </Container>
     </MainScreen>
   );
 }
