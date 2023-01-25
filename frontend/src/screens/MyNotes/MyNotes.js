@@ -75,6 +75,7 @@ function MyNotes({ history, search }) {
         )}
         {loading && <Loading />}
         {loadingDelete && <Loading />}
+        <br />
         <Col lg="10" md="12">
           <Card style={{ backgroundColor: "#bca8d6" }}>
             <CardHeader>
@@ -85,9 +86,9 @@ function MyNotes({ history, search }) {
               >
                 Students List
               </CardTitle>
-            </CardHeader>
+            </CardHeader>            
             <CardBody>
-              <Table className="tablesorter" responsive>
+              <Table className="tablesorter" responsive hover>
                 <thead className="text-primary">
                   <tr>
                     <th>Name</th>
