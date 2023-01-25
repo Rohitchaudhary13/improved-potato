@@ -73,9 +73,14 @@ function Header({ setSearch }) {
                 </NavDropdown>
               </>
             ) : (
-              <Link to="/login" style={{ fontSize: "1.2rem" }}>
+              <div className="landing-nav">
+              <Link to="/login" className="unbounded">
                 Login
               </Link>
+              <Link to="/register" className="unbounded">
+              SignUp
+            </Link>
+            </div>
             )}
           </Nav>
         </Navbar.Collapse>

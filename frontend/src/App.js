@@ -46,7 +46,7 @@ function App() {
         <Route path="/week4/:id" component={Week4Single} />
 
         <Route path="/note/:id" component={SingleNote} />
-        <Route path="/createnote" component={CreateNote} />;
+        <Route path="/createnote" component={CreateNote} />
         <Route path="/profile" component={ProfileScreen} />
         <Route path="/dashboard" component={Dashboard} />
       </main>

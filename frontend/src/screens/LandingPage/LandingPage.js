@@ -16,27 +16,14 @@ function LandingPage({ history }) {
 
   return (
     <div className="main">
-      <div className="landing-page-img-container">
-        <img
-          src={main}
-          alt="main"
-          className="landing-page-img"
-        />
-        <div className="text-over-img">
-          <h1 className="unbounded">
-            Stay organized and on top of your ideas with our app.
-          </h1>
-          <div className="landing-btn-cover">
-            <Link to="/login" className="primary-btn unbounded">
-              Login
-            </Link>
-            <Link to="/register" className="secondary-btn unbounded">
-              SignUp
-            </Link>
-          </div>
-        </div>
+      {/* <hr style={{border: "1px solid #fff", width: '95%', margin: 'auto'}} /> */}
+      <div className="landing-cover">
+        <h2 className="unbounded lander-0">Student</h2>
+        <h1 className="unbounded lander">
+          Evaluation
+        </h1>
+        <h2 className="unbounded lander-2">Portal</h2>
       </div>
-      <div></div>
     </div>
   );
 }
