@@ -3,6 +3,27 @@
 * {
   font-family: "Poppins", sans-serif;
 }
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #000000 #4f4f4f;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #4f4f4f;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #000000;
+    border-radius: 15px;
+    border: 0px none #b0b0b0;
+  }
 
 .unbounded {
   font-family: "Unbounded", cursive;

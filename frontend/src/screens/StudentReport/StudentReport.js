@@ -78,7 +78,7 @@ function MyNotes({ history, search }) {
   };
 
   return (
-    <div>
+    <div style={{width: '100%'}}>
       <MainScreen title={`Grades`}>
         {error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
         {errorDelete && (

@@ -10695,13 +10695,9 @@ img {
     background-color: #00bf9a !important; }
   .navbar.bg-danger {
     background-color: #fd5d93 !important; }
-<<<<<<< HEAD
+
   .navbar .navbar-brand {
-=======
-  .navbar .navbar-brand {    
->>>>>>> 4047eaaa5af9cf608020e2ab134c335e38d73927
-    padding-top: .3125rem;
-    padding-bottom: .3125rem;
+
     color: #ffffff;
     margin-left: 17px;
     margin-top: 3px;
