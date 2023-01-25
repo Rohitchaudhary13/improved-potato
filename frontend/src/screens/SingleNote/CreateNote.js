@@ -33,7 +33,7 @@ function CreateNote({ history }) {
     if (!name || !branch || !roll || !mobile) return;
 
     resetHandler();
-    history.push("/mynotes");
+    history.push("/mystudents");
   };
 
   useEffect(() => {}, []);

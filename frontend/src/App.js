@@ -29,7 +29,7 @@ function App() {
         <Route path="/login" component={LoginScreen} />
         <Route path="/register" component={RegisterScreen} />
         <Route
-          path="/mynotes"
+          path="/mystudents"
           component={({ history }) => (
             <MyNotes search={search} history={history} />
           )}

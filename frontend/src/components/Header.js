@@ -48,7 +48,7 @@ function Header({ setSearch }) {
           <Nav>
             {userInfo ? (
               <>
-                <Nav.Link href="/mynotes">My Students</Nav.Link>
+                <Nav.Link href="/mystudents">My Students</Nav.Link>
                 <Nav.Link href="/studentreport">Report</Nav.Link>
                 <Nav.Link href="/dashboard">Dashboard</Nav.Link>
                 <NavDropdown
