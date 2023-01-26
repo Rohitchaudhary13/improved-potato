@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import colors from "colors";
-import users from "./data/users.js";
-import notes from "./data/notes.js";
+// import users from "./data/users.js";
+// import notes from "./data/notes.js";
 import User from "./models/userModel.js";
 import Note from "./models/noteModel.js";
 
