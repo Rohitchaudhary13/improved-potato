@@ -2,7 +2,6 @@ import React from "react";
 import classNames from "classnames";
 import { Line, Bar } from "react-chartjs-2";
 import "../../assets/css/black-dashboard-react.css";
-import StudentReport from "../StudentReport/StudentReport";
 import {
   Button,
   ButtonGroup,
@@ -196,9 +195,6 @@ function Dashboard(props, wk) {
                   </CardBody>
                 </Card>
               </Col>
-            </Row>
-            <Row>
-              <StudentReport />
             </Row>
           </div>
         </Container>

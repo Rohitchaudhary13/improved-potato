@@ -25,6 +25,13 @@
     border: 0px none #b0b0b0;
   }
 
+.about{
+  color: rgba(255, 255, 255, 0.6);
+}
+.logo{
+  width: 25%!important;
+}
+
 .unbounded {
   font-family: "Unbounded", cursive;
 }

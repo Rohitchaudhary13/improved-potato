@@ -10,6 +10,7 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import { logout } from "../actions/userActions";
+import logo from '../assets/img/logo2.png';
 
 function Header({ setSearch }) {
   const history = useHistory();
@@ -39,7 +40,7 @@ function Header({ setSearch }) {
           className="unbounded"
           style={{ fontSize: "2rem" }}
         >
-          Salaah.
+          <img src={logo} alt="logo" className="logo" />
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="responsive-navbar-nav" className="" />
@@ -74,6 +75,9 @@ function Header({ setSearch }) {
               </>
             ) : (
               <div className="landing-nav">
+                <Link to="/about" className="unbounded">
+                About
+              </Link>
               <Link to="/login" className="unbounded">
                 Login
               </Link>

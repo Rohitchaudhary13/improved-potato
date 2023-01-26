@@ -3357,7 +3357,7 @@ input[type="button"].btn-block {
   .navbar .container,
   .navbar .container-fluid, .navbar .container-sm, .navbar .container-md, .navbar .container-lg, .navbar .container-xl {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
     justify-content: space-between; }
 
@@ -3614,7 +3614,7 @@ input[type="button"].btn-block {
   position: relative;
   display: flex;
   flex-direction: column;
-  z-index: 1;
+  z-index: 100;
   min-width: 0;
   word-wrap: break-word;  
   background-color: rgba(255,255,255,0.1) !important;
@@ -13514,7 +13514,7 @@ textarea.form-control {
     padding: 0 10px; }
   .card-chart .chart-area {
     height: 100%;
-    width: auto; }
+    width: 85%; }
   .card-chart .card-footer {
     margin-top: 15px; }
     .card-chart .card-footer .stats {

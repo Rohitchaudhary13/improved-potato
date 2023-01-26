@@ -18,16 +18,10 @@ function Graph(props, {history, search}) {
   const dispatch = useDispatch();
 
   const noteList = useSelector((state) => state.noteList);
-  const { loading, error, notes } = noteList;
+  const { notes } = noteList;
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
 
-  const noteDelete = useSelector((state) => state.noteDelete);
-  const {
-    loading: loadingDelete,
-    error: errorDelete,
-    success: successDelete,
-  } = noteDelete;
 
   const noteCreate = useSelector((state) => state.noteCreate);
   const { success: successCreate } = noteCreate;
@@ -43,7 +37,6 @@ function Graph(props, {history, search}) {
     dispatch,
     history,
     userInfo,
-    successDelete,
     successCreate,
     successUpdate,
   ]);

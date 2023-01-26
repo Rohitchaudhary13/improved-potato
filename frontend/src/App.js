@@ -18,6 +18,7 @@ import ProfileScreen from "./screens/ProfileScreen/ProfileScreen";
 import StudentReport from "./screens/StudentReport/StudentReport";
 import Dashboard from "./screens/Dashboard/Dashboard";
 import WeekDash from "./screens/Dashboard/WeekDash";
+import About from './screens/AboutPage/About';
 function App() {
   const [search, setSearch] = useState("");
 
@@ -49,6 +50,7 @@ function App() {
         <Route path="/createnote" component={CreateNote} />
         <Route path="/profile" component={ProfileScreen} />
         <Route path="/dashboard" component={Dashboard} />
+        <Route path="/about" component={About} />
         <Route path="/week1dash" component={() => <WeekDash wk='1'/>} />
         <Route path="/week2dash" component={() => <WeekDash wk='2'/>} />
         <Route path="/week3dash" component={() => <WeekDash wk='3'/>} />

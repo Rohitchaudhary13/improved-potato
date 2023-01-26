@@ -23,17 +23,35 @@
 
 .lander{
   font-size: 8rem;
+  color: white;
+
 }
 .lander-0 .lander-2{
-  font-size: 3rem;
+  font-size: 4rem;
+  
+}
+.lander-0{
+  color: white;
+}
+.lander-2{
+  color: white;
 }
 .landing-cover{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 8rem;
-  margin-bottom: 10rem;
+ 
+}
+.text_over{
+  position: absolute;
+  text-align: center;
+}
+video{
+  width: 90%;
+  height: auto;
+  border-radius: 30px 30px 30px 30px;
+  z-index: 0;
 }
 
 
@@ -47,6 +65,10 @@
   color: white!important;
   cursor: pointer!important;
   transition: all ease-in-out 0.3s;
+}
+.myImageLanding{
+  display: none;
+  border-radius: 30px 30px 30px 30px;
 }
 .primary-btn:hover{  
   border: 1px solid white;
@@ -77,14 +99,46 @@
   .primary-btn{
     width: 20%;
   }
+  video{
+    display: none;
+  }
+  .myImageLanding{
+    display: block;
+    z-index: 0;
+  }
 }
 @media screen and (max-width:800px){
   .primary-btn{
     width: 25%;
   }
+  .lander{
+    font-size: 6rem;
+  }
+  .myImageLanding{
+    display: block;
+  }
+}
+@media screen and (max-width:650px){
+  .lander{
+    font-size: 4rem;
+  }
+  .myImageLanding{
+    height: 100vh;
+    object-fit: cover;
+  }
 }
 @media screen and (max-width:500px){
   .primary-btn{
     width: 30vw;
+  }
+
+  .myImageLanding{
+    display: block;
+  }
+}
+@media screen and (max-width:430px){
+
+  .lander{
+    font-size: 2rem;
   }
 }
