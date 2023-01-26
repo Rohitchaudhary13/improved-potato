@@ -1,26 +1,14 @@
 import React from "react";
-import classNames from "classnames";
-import { Line, Bar } from "react-chartjs-2";
+
 import "../../assets/css/black-dashboard-react.css";
 import StudentReport from "../StudentReport/StudentReport";
 import {
-  Button,
-  ButtonGroup,
   Card,
   CardHeader,
   CardBody,
   CardTitle,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  UncontrolledDropdown,
-  Label,
-  FormGroup,
-  Input,
-  Table,
   Row,
   Col,
-  UncontrolledTooltip,
 } from "reactstrap";
 import MainScreen from "../../components/MainScreen";
 import Graph from "../../variables/charts.js";

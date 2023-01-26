@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "chart.js/auto";
 import { Chart } from "react-chartjs-2";
 import { useDispatch, useSelector } from "react-redux";
-import { listNotes } from "../../actions/notesActions";
 import {
   Chart as ChartJS,
   LineController,

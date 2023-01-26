@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { createNoteAction } from "../../actions/notesActions";
 import Loading from "../../components/Loading";
 import ErrorMessage from "../../components/ErrorMessage";
-import ReactMarkdown from "react-markdown";
 
 function CreateNote({ history }) {
   const [name, setName] = useState("");

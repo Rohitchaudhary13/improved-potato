@@ -1,33 +1,18 @@
 import React, { useEffect } from "react";
-// import { Accordion, Badge, Card } from "react-bootstrap";
 import MainScreen from "../../components/MainScreen";
 import { Link } from "react-router-dom";
-import ReactMarkdown from "react-markdown";
 import { FaRegEdit } from "react-icons/fa";
-import { MdOutlineDelete } from "react-icons/md";
-import { BiCategory } from "react-icons/bi";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteNoteAction, listNotes } from "../../actions/notesActions";
 import Loading from "../../components/Loading";
 import ErrorMessage from "../../components/ErrorMessage";
 import {
-  Button,
-  ButtonGroup,
   Card,
   CardHeader,
   CardBody,
   CardTitle,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  UncontrolledDropdown,
-  Label,
-  FormGroup,
-  Input,
   Table,
-  Row,
   Col,
-  UncontrolledTooltip,
 } from "reactstrap";
 
 function MyNotes({ history, search }) {
