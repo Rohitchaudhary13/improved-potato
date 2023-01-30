@@ -19,28 +19,28 @@ function SingleNote({ match, history }) {
   const [w1intern, setW1intern] = useState();
   const [w1extra, setW1extra] = useState();
   const [w1profile, setW1profile] = useState();
-  const [w1skills, setW1skills] = useState();  
-  
+  const [w1skills, setW1skills] = useState();
+
   const [w2intro, setW2intro] = useState();
   const [w2project, setW2project] = useState();
   const [w2intern, setW2intern] = useState();
   const [w2extra, setW2extra] = useState();
   const [w2profile, setW2profile] = useState();
-  const [w2skills, setW2skills] = useState();  
+  const [w2skills, setW2skills] = useState();
 
   const [w3intro, setW3intro] = useState();
   const [w3project, setW3project] = useState();
   const [w3intern, setW3intern] = useState();
   const [w3extra, setW3extra] = useState();
   const [w3profile, setW3profile] = useState();
-  const [w3skills, setW3skills] = useState();  
+  const [w3skills, setW3skills] = useState();
 
   const [w4intro, setW4intro] = useState();
   const [w4project, setW4project] = useState();
   const [w4intern, setW4intern] = useState();
   const [w4extra, setW4extra] = useState();
   const [w4profile, setW4profile] = useState();
-  const [w4skills, setW4skills] = useState();  
+  const [w4skills, setW4skills] = useState();
   const dispatch = useDispatch();
 
   const noteUpdate = useSelector((state) => state.noteUpdate);
@@ -125,27 +125,24 @@ function SingleNote({ match, history }) {
         w1skills,
         w1profile,
         w1extra,
-        (w2intro || undefined),
-        (w2project || undefined),
-        (w2intern || undefined),
-        (w2skills || undefined),
-        (w2profile || undefined),
-        (w2extra || undefined),
-
-        (w3intro || undefined),
-        (w3project || undefined),
-        (w3intern || undefined),
-        (w3skills || undefined),
-        (w3profile || undefined),
-        (w3extra || undefined),
-
-        (w4intro || undefined),
-        (w4project || undefined),
-        (w4intern || undefined),
-        (w4skills || undefined),
-        (w4profile || undefined),
-        (w4extra || undefined)
-
+        w2intro || undefined,
+        w2project || undefined,
+        w2intern || undefined,
+        w2skills || undefined,
+        w2profile || undefined,
+        w2extra || undefined,
+        w3intro || undefined,
+        w3project || undefined,
+        w3intern || undefined,
+        w3skills || undefined,
+        w3profile || undefined,
+        w3extra || undefined,
+        w4intro || undefined,
+        w4project || undefined,
+        w4intern || undefined,
+        w4skills || undefined,
+        w4profile || undefined,
+        w4extra || undefined
       )
     );
     if (
@@ -167,100 +164,113 @@ function SingleNote({ match, history }) {
   };
 
   return (
-    <MainScreen title="Week 1 Grades">  
-    <Container >
-      <Card>      
-        <Card.Header>Edit Details</Card.Header>
-        <Card.Body>
-          <Form onSubmit={updateHandler}>
-            {loadingDelete && <Loading />}
-            {error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
-            {errorDelete && (
-              <ErrorMessage variant="danger">{errorDelete}</ErrorMessage>
-            )}
-            <Form.Group controlId="w1intro">
-              <Form.Label>Introduction: </Form.Label>
-              <Form.Control
-                type="number"
-                min={0}
-                max={5}
-                value={w1intro}
-                placeholder="Week 1 Introduction"
-                onChange={(e) => setW1intro(e.target.value)}
-                required={true}
-              />
-            </Form.Group>
-            <Form.Group controlId="w1project">
-              <Form.Label>Project: </Form.Label>
-              <Form.Control
-                type="number"
-                min={0}
-                max={5}
-                value={w1project}
-                placeholder="Week 1 Project"
-                onChange={(e) => setW1project(e.target.value)}
-                required={true}
-              />
-            </Form.Group>
-            <Form.Group controlId="W1intern">
-              <Form.Label>Internships: </Form.Label>
-              <Form.Control
-                type="number"
-                min={0}
-                max={5}
-                value={w1intern}
-                placeholder="Week 1 Internships"
-                onChange={(e) => setW1intern(e.target.value)}
-                required={true}
-              />
-            </Form.Group>
-            <Form.Group controlId="w1extra">
-              <Form.Label>Extracurricular: </Form.Label>
-              <Form.Control
-                type="number"
-                min={0}
-                max={5}
-                value={w1extra}
-                placeholder="Week 1 Extracurricular"
-                onChange={(e) => setW1extra(e.target.value)}
-                required={true}
-              />
-            </Form.Group>
-            <Form.Group controlId="w1skills">
-              <Form.Label>Skills: </Form.Label>
-              <Form.Control
-                type="number"
-                min={0}
-                max={5}
-                value={w1skills}
-                placeholder="Week 1 Skills"
-                onChange={(e) => setW1skills(e.target.value)}
-                required={true}
-              />
-            </Form.Group>
-            <Form.Group controlId="w1profile">
-              <Form.Label>Technical Profiles: </Form.Label>
-              <Form.Control
-                type="number"
-                min={0}
-                max={5}
-                value={w1profile}
-                placeholder="Week 1 Technical Profiles"
-                onChange={(e) => setW1profile(e.target.value)}
-                required={true}
-              />
-            </Form.Group>
-            {loading && <Loading size={50} />}            
-            <button className="primary-btn" type="submit">
-              Update
-            </button>                        
-          </Form>
-        </Card.Body>        
-      </Card>
-      </Container>  
-      
+    <MainScreen title="Week 1 Grades">
+      <Container>
+        <Card>
+          <Card.Header>Edit Details</Card.Header>
+          <Card.Body>
+            <Form onSubmit={updateHandler}>
+              {loadingDelete && <Loading />}
+              {error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
+              {errorDelete && (
+                <ErrorMessage variant="danger">{errorDelete}</ErrorMessage>
+              )}
+              <Form.Group controlId="w1intro">
+                <Form.Label>Introduction: </Form.Label>
+                <Form.Control
+                  type="number"
+                  min={0}
+                  max={5}
+                  value={w1intro}
+                  placeholder="Week 1 Introduction"
+                  onChange={(e) => setW1intro(e.target.value)}
+                  required={true}
+                />
+              </Form.Group>
+              <Form.Group controlId="w1project">
+                <Form.Label>Project: </Form.Label>
+                <Form.Control
+                  type="number"
+                  min={0}
+                  max={5}
+                  value={w1project}
+                  placeholder="Week 1 Project"
+                  onChange={(e) => setW1project(e.target.value)}
+                  required={true}
+                />
+              </Form.Group>
+              <Form.Group controlId="W1intern">
+                <Form.Label>Internships: </Form.Label>
+                <Form.Control
+                  type="number"
+                  min={0}
+                  max={5}
+                  value={w1intern}
+                  placeholder="Week 1 Internships"
+                  onChange={(e) => setW1intern(e.target.value)}
+                  required={true}
+                />
+              </Form.Group>
+              <Form.Group controlId="w1extra">
+                <Form.Label>Extracurricular: </Form.Label>
+                <Form.Control
+                  type="number"
+                  min={0}
+                  max={5}
+                  value={w1extra}
+                  placeholder="Week 1 Extracurricular"
+                  onChange={(e) => setW1extra(e.target.value)}
+                  required={true}
+                />
+              </Form.Group>
+              <Form.Group controlId="w1skills">
+                <Form.Label>Skills: </Form.Label>
+                <Form.Control
+                  type="number"
+                  min={0}
+                  max={5}
+                  value={w1skills}
+                  placeholder="Week 1 Skills"
+                  onChange={(e) => setW1skills(e.target.value)}
+                  required={true}
+                />
+              </Form.Group>
+              <Form.Group controlId="w1profile">
+                <Form.Label>Technical Profiles: </Form.Label>
+                <Form.Control
+                  type="number"
+                  min={0}
+                  max={5}
+                  value={w1profile}
+                  placeholder="Week 1 Technical Profiles"
+                  onChange={(e) => setW1profile(e.target.value)}
+                  required={true}
+                />
+              </Form.Group>
+              <Form.Group
+                className="mb-3"
+                controlId="w1comment"
+              >
+                <Form.Label>Comments: </Form.Label>
+                <Form.Control as="textarea" rows={3} placeholder="Week 1 Comments" />
+              </Form.Group>
+              {loading && <Loading size={50} />}
+              <button className="primary-btn" type="submit">
+                Update
+              </button>
+            </Form>
+          </Card.Body>
+        </Card>
+      </Container>
     </MainScreen>
   );
 }
 
 export default SingleNote;
+
+// <InputGroup.Text>Comments</InputGroup.Text>
+//         <Form.Control as="textarea" aria-label="With textarea" />
+//         <InputGroup.Text>
+//           <button type="submit" style={{all: 'unset', cursor: 'pointer'}}>Submit</button>
+//         </InputGroup.Text>
+//       </InputGroup>

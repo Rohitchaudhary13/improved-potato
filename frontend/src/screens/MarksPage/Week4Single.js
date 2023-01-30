@@ -247,6 +247,13 @@ function SingleNote({ match, history }) {
                   required={true}
                 />
               </Form.Group>
+              <Form.Group
+                className="mb-3"
+                controlId="w1comment"
+              >
+                <Form.Label>Comments: </Form.Label>
+                <Form.Control as="textarea" rows={3} placeholder="Week 4 Comments" />
+              </Form.Group>
               {loading && <Loading size={50} />}
               <button className="primary-btn" type="submit">
                 Update
